@@ -23,7 +23,7 @@ var scrollTop = function() {
 
             percent = easing(percent);
 
-            window.scrollTo(0, startingY + (startingY * -1 ) * percent)
+            window.scrollTo(0, startingY + (startingY * -1 ) * percent);
 
             if (time < duration) {
                 window.requestAnimationFrame(step);
@@ -54,13 +54,8 @@ var scrollTop = function() {
         }, false);
     }
 
-    function app() {
+    function app(config) {
         var top = document.querySelector('.top');
-
-        var config = {
-            durationTime: 1000,
-            scrollDistance: 500
-        };
 
         if(top) {
             click(top, config);
@@ -73,7 +68,3 @@ var scrollTop = function() {
     }
 
 }();
-
-window.addEventListener('load', function() {
-    scrollTop.app();
-}, false);
